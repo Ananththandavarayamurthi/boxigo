@@ -1,0 +1,102 @@
+.container button{
+   
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #000000;
+    min-width: 9.563rem;
+    border-radius: 0.3rem;
+    margin: 0px -155px;
+    height: 35px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      
+}
+.container{
+    padding: 20px 50px;
+    display: flex;
+    margin-right: -25px;
+    margin-left: -15px;
+    justify-content: space-around;
+}
+.accordtion-container{
+    padding: 2px 50px;
+    margin-right: -25px;
+    margin-left: -15px;
+   
+    
+}
+.Typography{
+       color:   #ee553b;  
+}
+.sub-container h3{
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #242424;
+    font-size: 1rem;
+}
+.sub-container p{
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #242424;
+    font-size: .9rem;
+}
+.head-container{
+    display:flex;
+    padding-right: 57px;
+}
+.house p{
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #ee553b;
+    font-size: 1rem;
+}
+.house{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 40px;
+
+}
+.sec-sub-container{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40px;
+    margin-right: -25px;
+    margin-left: -15px;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.sec-sub-container div p{
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+    font-size: .9rem;
+}
+.main-inventory{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.fist-child-inventor{
+    display: flex;
+    justify-content: space-between;
+}
+.sec-child-inventor{
+    display: flex;
+    justify-content: space-between;
+}
+.sec-list{
+    padding: 20px;
+}

@@ -73,82 +73,211 @@
 
 // export default Home
 
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+
+// function Home() {
+
+//   const[searchTerm,setSearchTerm]=useState("");
+
+//     const [data,Setdata]=useState([]);
+//     console.log(data)
+
+
+    
+//     const data1=Object.keys(data).reduce((acc,val)=>{
+//           acc[val.toUpperCase()]=data[val]
+//       return acc
+//     },{})
+
+//     console.log("upper",data1)
+
+//   //   const capital = obj =>
+//   // Object.keys(obj).reduce((acc, index) => {
+//   //   acc[index.toUpperCase()]=obj[index];
+//   //   return acc;
+//   // }, {});
+//   const url="https://dog.ceo/api/breeds/list/all"
+//   const getData=()=>{
+//     fetch(url)
+//     .then(res=>res.json())
+//     .then(res=>Setdata(res.message))
+//   }
+//   useEffect(()=>{
+//   getData()  
+//   },[])
+
+//   return (
+//     <div>
+// <div>    <input
+        
+//                 clearable
+//                 value={searchTerm}
+//                 onChange={(e) => setSearchTerm(e.target.value)}
+//               /></div>
+
+//         <table className="table">
+//   <thead>
+//     <tr>
+//       <th scope="col">name</th>
+//       <th scope="col">breed</th>
+      
+      
+//     </tr>
+//   </thead>
+//   <tbody>
+//      {data1?Object.entries(data1).filter((val)=>{
+//   if(searchTerm ===""){
+//     return val
+//   }
+//   else if(val[0].toString().toLowerCase().includes(searchTerm.toString().toLowerCase())){
+//     return val;
+//   }
+//   else if(val[1].toString().toLowerCase().includes(searchTerm.toString().toLowerCase())){
+//     return val;
+//   }
+  
+  
+// }).map((key,value)=>(
+//       <tr>
+//       <td >{key[0]}</td>
+//       <td >{key[1].map((e)=>(<div>{e}</div>))}</td>
+//     </tr>
+
+//      )):data1}
+
+    
+    
+//   </tbody>
+// </table>
+
+//     </div>
+//   )
+// }
+
+// export default Home
+
+
+import React, { useState } from 'react'
+import {Link} from "react-router-dom"
+import Listedcomponent from './Listedcomponent'
+import Dropdown from 'react-bootstrap/Dropdown';
+
+
 
 function Home() {
 
-  const[searchTerm,setSearchTerm]=useState("");
+const arr=["ananth","ashok","bharathi"]
+const [data,setData]=useState(arr)
+   
 
-    const [data,Setdata]=useState([]);
-    console.log(data)
+const handledelete=(i)=>{
+const newData=[...data]
+   newData.splice(i,1)
+   setData(newData)
 
-
-    
-    const data1=Object.keys(data).reduce((acc,val)=>{
-          acc[val.toUpperCase()]=data[val]
-      return acc
-    },{})
-
-    console.log("upper",data1)
-
-  //   const capital = obj =>
-  // Object.keys(obj).reduce((acc, index) => {
-  //   acc[index.toUpperCase()]=obj[index];
-  //   return acc;
-  // }, {});
-  const url="https://dog.ceo/api/breeds/list/all"
-  const getData=()=>{
-    fetch(url)
-    .then(res=>res.json())
-    .then(res=>Setdata(res.message))
+}
+const [toggle,setToggle]=useState(false)
+const [value,setValue]=useState()
+const [city,setcity]=useState()
+console.log(value)
+const country=[{
+      name:"india",
+      code:"IN",
+      city:[
+        "chennai",
+        "trichy"
+      ]
+},
+{
+  name:"london",
+  code:"LN",
+  city:[
+    "villupram",
+    "cuddlor"
+  ]
+},
+{
+  name:"malasia",
+  code:"ML",
+  city:[
+    "che",
+    "difbdoaiub"
+  ]
+},
+]
+const checkcity=country.filter(val=>{
+  if(val.name===value){
+    return val
   }
-  useEffect(()=>{
-  getData()  
-  },[])
+})
+
+console.log(checkcity[0]?checkcity[0].city:null)
+
 
   return (
     <div>
-<div>    <input
+            <Link to="/photos"><button>movies</button></Link>
+            <Link to="/post"><button>post</button></Link>
+            {
+              data&&data.map((val,i)=>{
+                return <ol key={i+1} ><Listedcomponent id={i}
+                  
+                  name={val}
+                  deletebutton={
+                    <button onClick={()=>handledelete(i)}>delete</button>
+                     }
+
+
+                
+                />
+                </ol>
+              })
+            }
+            
+
+            
+            <Dropdown >
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        {value?value:"select"}
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu >
+
+        {country.map((val,i)=>{
+            return <Dropdown.Item onClick={()=>setValue(val.name)} key={i}>
+              {val.name}
+
+              
+            </Dropdown.Item>
+        })
         
-                clearable
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              /></div>
+}
+      </Dropdown.Menu>
+    </Dropdown>
 
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">name</th>
-      <th scope="col">breed</th>
+    <Dropdown>
       
-      
-    </tr>
-  </thead>
-  <tbody>
-     {data1?Object.entries(data1).filter((val)=>{
-  if(searchTerm ===""){
-    return val
-  }
-  else if(val[0].toString().toLowerCase().includes(searchTerm.toString().toLowerCase())){
-    return val;
-  }
-  else if(val[1].toString().toLowerCase().includes(searchTerm.toString().toLowerCase())){
-    return val;
-  }
-  
-  
-}).map((key,value)=>(
-      <tr>
-      <td >{key[0]}</td>
-      <td >{key[1].map((e)=>(<div>{e}</div>))}</td>
-    </tr>
+    <Dropdown.Toggle variant="success" id="dropdown-basic">
+        {city?city:null}
+     </Dropdown.Toggle>
 
-     )):data1}
+       <Dropdown.Menu>
+         {checkcity[0]?(checkcity[0].city.map(val=>{
+            return <Dropdown.Item onClick={()=>setcity(val)} >
+              {val}
+            </Dropdown.Item>
+        })):null
+        
+}
+      </Dropdown.Menu>
+    </Dropdown>
 
-    
-    
-  </tbody>
-</table>
+
+
+
+
+        
+            
 
     </div>
   )

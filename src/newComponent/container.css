@@ -1,0 +1,151 @@
+.container{
+      
+      display: flex;
+     
+      margin-right: -25px;
+      margin-left: -15px;
+      flex-wrap: wrap;
+      padding: 20px;
+      justify-content: space-around;
+      margin-bottom: 0px;
+    border-bottom: 0px;
+      padding-bottom: 0px;
+      align-items: stretch; 
+     
+}
+.sec-container{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 40px;
+    align-items: center;
+    justify-items: center;
+    margin:0px 20px;
+    border-top: 0px;
+    padding-top: 0px;
+    justify-items: center;
+    align-items: baseline;
+}
+.sec-container div p{
+  font-size: 11px;
+}
+.request{
+  color: #ee553b !important;
+  font-weight: 1000 !important;
+
+}
+.button1{
+  padding: 0.25rem 0.5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+ color: #ee553b;
+ background-color: #ffffff;
+    
+    min-width: 9.563rem;
+    border-radius: 0.3rem;
+    border: solid 2px #ee553b;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+.button2{
+  padding: 0.25rem 0.5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+ color: rgb(255, 255, 255);
+ background-color: #ee553b;
+    
+    min-width: 9.563rem;
+    border-radius: 0.3rem;
+    border: solid 2px #ee553b;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+.head-container{
+  display: flex;
+  flex-direction: column;
+  
+}
+.heading h2{
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #242424;
+  font-size: 1.25rem;
+
+}
+.heading p{
+  font-size: .75rem;
+  color: #676767;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  line-height: 2.17;
+  letter-spacing: normal;
+  max-width: 350px;
+  
+}
+.direction{
+  
+   top: 6rem; 
+   left: 4rem;
+   border-radius: 50%;
+   box-shadow: 0 3px 6px rgba(0,0,0,.16);
+   height: 2.5rem;
+   width: 2.5rem;
+   padding: 7px 11px;
+}
+
+.third-container h3{
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  text-align: left;
+  color: #242424;
+  font-size: .9rem;
+  margin: 0px 62px;
+}
+.warning{
+  font-size: .75rem;
+  color: #676767;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  line-height: 2.17;
+  letter-spacing: normal;
+ 
+}
+
+/* 
+container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.json-data {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.nested-object {
+  margin-left: 20px;
+}
+
+.key-value {
+  margin-bottom: 10px;
+}
+
+.key {
+  font-weight: bold;
+}
+
+.value {
+  margin-left: 5px;
+} */
